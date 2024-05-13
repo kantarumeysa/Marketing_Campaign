@@ -77,8 +77,9 @@ for name, model in models.items():
             "Precision": [precision],
             "Recall": [recall]
         })
-        # Boş ve tamamen NA olan sütunları kaldırarak DataFrame'e ekleyin
-        clean_performance_row = performance_row.dropna(axis=1, how='all')
+        # Boş ve tamamen NA olan sütunları her bir DataFrame oluşturulduğunda kaldırın
+        clean_performance_row = performance_row.dropna(axis=1, how='all').dropna(axis=0, how='all')
+        # DataFrame'e ekleyin
         performance_data = pd.concat([performance_data, clean_performance_row], ignore_index=True)
 
 # Sonuçları yazdırma
