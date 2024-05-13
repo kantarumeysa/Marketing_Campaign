@@ -102,7 +102,7 @@ X_train_sets = [X_train, X_train_uni, X_train_rfe, X_train_rf]
 X_test_sets = [X_test, X_test_uni, X_test_rfe, X_test_rf]
 
 # Görselleştirme işlemi
-fig, axes = plt.subplots(len(models1) * len(feature_sets), 2, figsize=(12, 5 * len(models) * len(feature_sets)))
+fig, axes = plt.subplots(len(models1) * len(feature_sets), 2, figsize=(12, 5 * len(models1) * len(feature_sets)))
 
 for i, (name, model) in enumerate(models1.items()):
     for j, (set_name, X_train_set, X_test_set) in enumerate(zip(feature_sets, X_train_sets, X_test_sets)):
@@ -131,4 +131,3 @@ for i, (name, model) in enumerate(models1.items()):
 
 plt.tight_layout()
 plt.show()
-plt.close()
